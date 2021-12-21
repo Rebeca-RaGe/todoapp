@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import { TodoList } from "./components/TodoList";
+import { useEffect, useReducer } from "react";
+import { todoReducer } from "./reducer/todoReducer";
+import { TodoContext } from "./context/TodoContext";
+
+const init = () => {
+  return JSON.parse(localStorage.getItem("todos")) || [];
+};
 
 function App() {
+  const [todos, dispatch] = useReducer(todoReducer, [], init);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <TodoContext.Provider value={{ todos: todos, dispatch: dispatch }}>
+        <Header></Header>
+        <TodoList></TodoList>
+        <Footer></Footer>
+      </TodoContext.Provider>
+    </main>
   );
 }
 

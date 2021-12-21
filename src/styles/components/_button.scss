@@ -1,0 +1,27 @@
+.btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: $white;
+  cursor: pointer;
+
+  &--add {
+    background-color: $dark-blue;
+    @include btn-hover($dark-blue);
+  }
+
+  &--delete {
+    background-color: $dark-red;
+    @include btn-hover($dark-red);
+  }
+
+  &--check {
+    background-color: $dark-green;
+    @include btn-hover($dark-green);
+  }
+
+  &--clear {
+    background-color: $dark-blue;
+    @include btn-hover($dark-blue);
+  }
+}

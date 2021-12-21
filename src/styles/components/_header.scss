@@ -1,0 +1,21 @@
+.header-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 1rem 0;
+  padding: 0;
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__form {
+    margin-top: 3rem;
+  }
+
+  form {
+    min-width: 60%;
+  }
+}

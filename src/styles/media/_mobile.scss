@@ -1,0 +1,33 @@
+@media (max-width: 800px) {
+  main {
+    margin: 1rem 0.5rem;
+    min-width: 95vw;
+    text-align: center;
+  }
+
+  .input {
+    min-width: 5rem;
+  }
+
+  .btn {
+    &--add {
+      width: 85%;
+    }
+
+    &--clear {
+      width: 90%;
+      margin-top: 1.5rem;
+    }
+  }
+
+  .todo-list {
+    margin: 3rem 0;
+    padding: 1rem;
+  }
+
+  .footer {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+}

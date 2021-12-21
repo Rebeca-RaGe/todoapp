@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useContext } from "react/cjs/react.development";
+import React, { useEffect, useState, useContext } from "react";
 import { TodoContext } from "../context/TodoContext";
 
 export const Footer = () => {
